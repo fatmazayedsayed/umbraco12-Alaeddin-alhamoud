@@ -1,0 +1,20 @@
+part #1 https://www.youtube.com/watch?v=PNNzUFjIWqs&list=PLsuGDhUzy1NBIwRnB0JRvAqxo5F0oAbm8&index=2
+inital start
+from cmd
+# Ensure we have the latest Umbraco templates
+dotnet new -i Umbraco.Templates
+
+# Create solution/project
+dotnet new sln --name "umbraco12"
+dotnet new umbraco --force -n "umbraco12" --friendly-name "admin" --email "admin@admin.com" --password "A@12345678" --connection-string "server=DELL;database=umbraco12;TrustServerCertificate=true;Integrated Security=true;;" --connection-string-provider-name "Microsoft.Data.SqlClient"
+dotnet sln add "umbraco12"
+
+#Add starter kit
+dotnet add "umbraco12" package clean
+
+#Add Packages
+dotnet add "umbraco12" package uSync
+dotnet add "umbraco12" package Our.Umbraco.Community.Contentment
+
+dotnet run --project "umbraco12"
+#Running
