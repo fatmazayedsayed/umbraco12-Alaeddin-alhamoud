@@ -18,3 +18,15 @@ dotnet add "umbraco12" package Our.Umbraco.Community.Contentment
 
 dotnet run --project "umbraco12"
 #Running
+
+
+-------------------------------------------------------------------------------
+change app setting ->umbraco section to enable model creation
+ "Umbraco": {
+    "CMS": {
+      "Runtime": {
+        "Mode": "Development"
+      },
+      "ModelsBuilder": {
+        "ModelsMode": "SourceCodeManual"
+      },
